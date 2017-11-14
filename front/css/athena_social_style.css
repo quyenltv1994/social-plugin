@@ -1,0 +1,23 @@
+.asocials__wrapper-icons{
+    list-style: none;
+    text-align: right;
+}
+.asocials__wrapper-icons li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.asocials__wrapper-icons li a{
+    font-size: 25px;
+    transition: all .5s;
+}
+.asocials__wrapper-icons li a:hover{
+    color:red;
+}
+.asocials__wrapper--container{
+    margin:0 -30px;
+}
+.asocials__wrapper--container .sw__item{
+    width: 33.33%;
+    margin-bottom: 20px;
+    padding:0 30px;
+}

@@ -10,8 +10,12 @@ Class Athena_Social_Front{
 
     //load assets
     public function load_assets(){
-        wp_register_style( 'isotope-js', plugins_url('js/isotope-master/dist/isotope.pkgd.min.js',__FILE__ ), false, '1.0.0' );
-        wp_enqueue_style( 'isotope-js' );
+        wp_register_style( 'isotope-css', plugins_url('css/athena_social_style.css',__FILE__ ));
+        wp_enqueue_style( 'isotope-css' );
+        wp_register_script( 'isotope-js', plugins_url('js/isotope-master/dist/isotope.pkgd.min.js',__FILE__ ), false, '1.0.0' );
+        wp_enqueue_script( 'isotope-js' );
+        wp_register_script( 'athena-social-js', plugins_url('js/athena_social_js.js',__FILE__ ), false, '1.0.0' );
+        wp_enqueue_script( 'athena-social-js' );
     }
 
     //get results

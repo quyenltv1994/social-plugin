@@ -39,7 +39,8 @@ class Athena_Social_Admin{
             __('Socials', TEXT_DOMAIN),      // menu title
             'manage_options',                        // capability
             'athena-social',                           // menu_slug
-            array($this, 'display_settings_page')  // callable function
+            array($this, 'display_settings_page'),  // callable function
+            'dashicons-admin-site'
         );
     }
 
