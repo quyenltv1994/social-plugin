@@ -29,7 +29,7 @@ class Athena_Social_Api{
     protected function _resetData($posttype){
         global $wpdb;
         $posts_table = $wpdb->prefix . 'posts';
-        $sql = "DELETE FROM {$posts_table} WHERE post_type = {$posttype}";
+        $sql = "DELETE FROM {$posts_table} WHERE {$posts_table}.post_type = '{$posttype}'";
         $delete = $wpdb->query($sql);
         return $delete;
     }
@@ -38,14 +38,14 @@ class Athena_Social_Api{
         $createTime = date("d-F", strtotime($object->getCreateTime()));
         $post_id = wp_insert_post( array(
             'post_status' => 'publish',
-            'post_type' => 'facebook',
+            'post_type' => $object->getPostType(),
             'post_title' => $object->getTitle(),
             'post_content' => $object->getContent(),
             'post_date' => $object->getCreateTime()
         ) );
-        update_post_meta( $post_id, 'photo', $object->getPhoto());
-        update_post_meta( $post_id, 'link', $object->getLink() );
-        update_post_meta( $post_id, 'created_time', $createTime );
+        update_post_meta( $post_id, 'social_photo', $object->getPhoto());
+        update_post_meta( $post_id, 'social_link', $object->getLink() );
+        update_post_meta( $post_id, 'social_created_time', $createTime );
         return $post_id;
     }
 }

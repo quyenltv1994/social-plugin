@@ -1,4 +1,5 @@
 <?php
+
 class Athena_Social{
     /**
      * The unique identifier of this plugin.
@@ -26,13 +27,19 @@ class Athena_Social{
             $this->version = '1.0.0';
         }
         $this->plugin_name = 'athena-social';
-
         $this->load_dependencies();
+        $this->loadFrontEnd();
     }
 
     //load_dependencies
     public function load_dependencies(){
         require PLUGIN_DIR ."admin/athena-social-admin.php";
         $social_admin = new Athena_Social_Admin($this->plugin_name, $this->version);
+    }
+
+    //load_dependencies
+    public function loadFrontEnd(){
+        require PLUGIN_DIR ."front/Athena_Social_Front.php";
+        $social_admin = new Athena_Social_Front();
     }
 }

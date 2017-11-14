@@ -1,6 +1,7 @@
 <?php
 require_once PLUGIN_DIR."api/Athena_Social_Api.php";
 require_once PLUGIN_DIR."api/Athena_Social_Object.php";
+
 class Athena_Facebook_Api extends Athena_Social_Api{
     public function getResults($pageId, $accessToken){
         if(!empty($pageId)) {

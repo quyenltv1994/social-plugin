@@ -14,6 +14,10 @@ class Athena_Social_Object{
 
     protected $posttype; //post type
 
+    protected $avatar; //avatar
+
+    protected $screen_name; //screen_name
+
     public function setTitle($title){
         $this->title = $title;
     }
@@ -38,6 +42,14 @@ class Athena_Social_Object{
         $this->posttype = $posttype;
     }
 
+    public function setAvatar($avatar){
+        $this->avatar = $avatar;
+    }
+
+    public function setScreen_name($screen_name){
+        $this->screen_name = $screen_name;
+    }
+
     public function getTitle(){
         return $this->title;
     }
@@ -60,6 +72,14 @@ class Athena_Social_Object{
 
     public function getPostType(){
         return $this->posttype;
+    }
+
+    public function getAvatar(){
+        return $this->avatar;
+    }
+
+    public function getScreenName(){
+        return $this->screen_name;
     }
 
 }

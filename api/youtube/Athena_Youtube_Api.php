@@ -1,5 +1,6 @@
 <?php
 require_once PLUGIN_DIR."api/Athena_Social_Api.php";
+require_once PLUGIN_DIR."api/Athena_Social_Object.php";
 
 class Athena_Youtube_Api extends Athena_Social_Api{
 
@@ -10,13 +11,14 @@ class Athena_Youtube_Api extends Athena_Social_Api{
             $result = json_decode($result);
             if (!empty($result->items)) {
                 //reset Data
-                $this->_resetData('youtube');
+                $delete = $this->_resetData('youtube');
                 // parse medias
                 foreach ($result->items as $video) {
+                    $createTime = date('Y-m-d H:i:s', strtotime($video->publishedAt));
                     $social_object = new Athena_Social_Object();
                     $social_object->setTitle($video->snippet->title);
                     $social_object->setContent($video->snippet->description);
-                    $social_object->setCreateTime($video->publishedAt);
+                    $social_object->setCreateTime($createTime);
                     $social_object->setPostType('youtube');
                     $social_object->setPhoto( $video->snippet->thumbnails->maxres->url);
                     $social_object->setLink('https://www.youtube.com/watch?v='.$video->snippet->resourceId->videoId);

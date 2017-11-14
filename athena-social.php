@@ -11,7 +11,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Social
- * Plugin URI:
+ * Plugin URI:		  https://github.com/quyenltv1994/social-plugin
  * Description:       A plugin to Socials
  * Version:           1.0.0
  * Author:            Athena Team

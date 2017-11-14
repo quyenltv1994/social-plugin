@@ -45,11 +45,7 @@ class Athena_Social_Admin{
 
     //template menus
     public function display_settings_page(){
-        /*if(isset($_GET['tab']) && $_GET['tab'] == 2){
-            $this->getApiResults();
-        }else{*/
-            require_once plugin_dir_path(dirname(__FILE__)).'admin/templates/athena-social-admin-display.php';
-        //}
+        require_once plugin_dir_path(dirname(__FILE__)).'admin/templates/athena-social-admin-display.php';
     }
 
     //load asstes in plugin
