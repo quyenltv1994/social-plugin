@@ -12,16 +12,16 @@ Class Athena_Social_Front{
     public function load_assets(){
         wp_register_style( 'isotope-css', plugins_url('css/athena_social_style.css',__FILE__ ));
         wp_enqueue_style( 'isotope-css' );
-        wp_register_script( 'isotope-js', plugins_url('js/isotope-master/dist/isotope.pkgd.min.js',__FILE__ ), false, '1.0.0' );
+        wp_register_script( 'isotope-js', plugins_url('js/isotope-master/dist/isotope.pkgd.min.js',__FILE__ ), null, '1.0.0', true );
         wp_enqueue_script( 'isotope-js' );
-        wp_register_script( 'athena-social-js', plugins_url('js/athena_social_js.js',__FILE__ ), false, '1.0.0' );
+        wp_register_script( 'athena-social-js', plugins_url('js/athena_social_js.js',__FILE__ ), null, '1.0.0', true );
         wp_enqueue_script( 'athena-social-js' );
     }
 
     //get results
     public function getResults(){
         $args = array(
-            'posts_per_page'=> -1,
+            'posts_per_page'=> 10,
             'post_type' => array( 'facebook', 'youtube', 'twitter' ),
             'order_by' => 'date',
             'order' => 'DECS'

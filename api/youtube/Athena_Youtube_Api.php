@@ -14,7 +14,8 @@ class Athena_Youtube_Api extends Athena_Social_Api{
                 $delete = $this->_resetData('youtube');
                 // parse medias
                 foreach ($result->items as $video) {
-                    $createTime = date('Y-m-d H:i:s', strtotime($video->publishedAt));
+                    $createTime = date('Y-m-d H:i:s', strtotime($video->snippet->publishedAt));
+                    var_dump($createTime);
                     $social_object = new Athena_Social_Object();
                     $social_object->setTitle($video->snippet->title);
                     $social_object->setContent($video->snippet->description);

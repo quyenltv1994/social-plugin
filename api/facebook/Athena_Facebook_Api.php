@@ -34,12 +34,17 @@ class Athena_Facebook_Api extends Athena_Social_Api{
                             'height' => 500
                         );
                     }
+                    if(empty($post->message)){
+                        $post->message = "<p></p>";
+                    }
                     $social_object = new Athena_Social_Object();
                     $social_object->setTitle($post->from->name);
                     $social_object->setContent($post->message);
                     $social_object->setCreateTime($post->created_time);
                     $social_object->setPostType('facebook');
-                    $social_object->setPhoto($post->photo['src']);
+                    if(!empty($post->photo)){
+                        $social_object->setPhoto($post->photo['src']);
+                    }
                     $social_object->setLink('https://www.facebook.com/profile.php?id='.$post->from->id);
                     $post_id = $this->_saveData($social_object);
                     if($post_id){

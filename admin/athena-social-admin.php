@@ -84,6 +84,7 @@ class Athena_Social_Admin{
             $youtube->getResults($youtube_listID, $youtube_api_key);
         }
         if($this->checkTwitter()){
+            echo "<h3>".__('Twitter', TEXT_DOMAIN)."</h3>";
             $twitter_consumer_key = get_option('twitter_consumer_key');
             $twitter_consumer_secret = get_option('twitter_consumer_secret');
             $twitter_tags = get_option('twitter_tags');
