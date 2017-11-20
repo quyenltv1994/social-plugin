@@ -2,7 +2,7 @@ jQuery(function($) {
     jQuery(document).ready(function () {
         if($(".asocials").length > 0) {
             var $grid = $('.asocials__wrapper--container').isotope({
-                itemSelector: '.sw__item'
+                itemSelector: '.as__item'
             });
             jQuery(".asocials__wrapper-icons li a").click(function (e) {
                 e.preventDefault();

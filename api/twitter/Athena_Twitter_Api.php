@@ -52,7 +52,9 @@ class Athena_Twitter_Api extends Athena_Social_Api{
         $social_object->setTitle($tweet->user->name);
         $social_object->setScreen_name($tweet->user->screen_name);
         $social_object->setAvatar($tweet->user->profile_image_url);
-        $social_object->setPhoto($img);
+        if(!empty($img)){
+            $social_object->setPhoto($img);
+        }
         $social_object->setLink('http://twitter.com/'.$tweet->user->screen_name);
         $social_object->setPostType('twitter');
 
@@ -75,7 +77,7 @@ class Athena_Twitter_Api extends Athena_Social_Api{
                     'count' => 50
                 );
                 $result = $auth->get('search/tweets', $requestParams);
-                if($result->errors) {
+                if(!empty($result->errors)) {
                     foreach($result->errors as $error) {
                         echo $error->message.' ';
                     }
