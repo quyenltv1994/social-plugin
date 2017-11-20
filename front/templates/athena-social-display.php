@@ -1,3 +1,6 @@
+<?php
+    if(!empty($results)):
+?>
 <div class="asocials">
     <div class="asocials__wrapper">
         <ul class="asocials__wrapper-icons">
@@ -34,4 +37,6 @@
         </div>
     </div>
 </div>
-
+<?php
+    endif;
+?>

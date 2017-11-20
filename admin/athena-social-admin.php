@@ -75,7 +75,7 @@ class Athena_Social_Admin{
             $facebook = new Athena_Facebook_Api();
             $facebook->getResults($facebook_page_id, $facebook_access_token);
         }
-        if($this->checkYoutube()){
+        /*if($this->checkYoutube()){
             echo "<h3>".__('Youtube', TEXT_DOMAIN)."</h3>";
             $youtube_api_key = get_option('youtube_api_key');
             $youtube_listID = get_option('youtube_listID');
@@ -90,7 +90,7 @@ class Athena_Social_Admin{
             require_once PLUGIN_DIR."api/twitter/Athena_Twitter_Api.php";
             $twitter = new Athena_Twitter_Api();
             $twitter->getResults($twitter_consumer_key, $twitter_consumer_secret, $twitter_tags);
-        }
+        }*/
     }
 
     //check facebook options
