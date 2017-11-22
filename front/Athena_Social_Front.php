@@ -34,6 +34,7 @@ Class Athena_Social_Front{
                 $photo = get_post_meta($post->ID, 'social_photo', true);
                 $social_link = get_post_meta($post->ID, 'social_link', true);
                 $social_created_time = get_post_meta($post->ID, 'social_created_time', true);
+                $avatar = get_post_meta($post->ID, 'social_avatar', true);
                 $object = new Athena_Social_Object();
                 $object->setTitle($post->post_title);
                 $object->setContent($post->post_content);
@@ -41,6 +42,7 @@ Class Athena_Social_Front{
                 $object->setPostType($post->post_type);
                 $object->setPhoto($photo);
                 $object->setLink($social_link);
+                $object->setAvatar($avatar);
                 $results[] =  $object;
             endwhile;
             return $results;
@@ -51,5 +53,23 @@ Class Athena_Social_Front{
     public function show_Front($atts){
         $results = $this->getResults();
         require_once plugin_dir_path(dirname(__FILE__)).'front/templates/athena-social-display.php';
+    }
+
+    public function getIcon($posttype){
+        switch($posttype){
+            case 'facebook':
+                return 'fa-facebook';
+                break;
+            case 'youtube':
+                return 'fa-youtube-play';
+                break;
+            case 'twitter':
+                return 'fa-twitter';
+                break;
+            case 'in':
+                break;
+            default:
+                return false;
+        }
     }
 }

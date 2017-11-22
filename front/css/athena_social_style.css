@@ -30,6 +30,20 @@
     padding:20px 45px 20px 20px;
     color: #2d3a42;
     font-size: 13px;
+    position: relative;
+}
+.as__item__content.as__item__content--avatar{
+    padding-left:90px;
+}
+.sw__item__avatar{
+    position: absolute;
+    top:20px;
+    position: absolute;
+    left: 20px;
+    width: 50px;
+}
+.sw__item__avatar img{
+    max-width: 100%;
 }
 .as__item__image img{
     max-width: 100%;
@@ -47,4 +61,10 @@
 }
 .as__item__text a{
     color:#F01515;
+}
+.as__item__icon{
+    position: absolute;
+    bottom:20px;
+    right:20px;
+    font-size: 20px;
 }

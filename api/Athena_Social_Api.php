@@ -45,7 +45,9 @@ class Athena_Social_Api{
         ) );
         update_post_meta( $post_id, 'social_photo', $object->getPhoto());
         update_post_meta( $post_id, 'social_link', $object->getLink() );
-        update_post_meta( $post_id, 'social_created_time', $createTime );
+        if(!empty($object->getAvatar())){
+            update_post_meta( $post_id, 'social_avatar', $object->getAvatar() );
+        }
         return $post_id;
     }
 }
