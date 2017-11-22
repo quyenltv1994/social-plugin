@@ -68,23 +68,22 @@ class Athena_Social_Admin{
 
     public function getApiResults(){
         //check Facebook
-        /*if($this->checkFacebook()){
+        if($this->checkFacebook()){
             echo "<h3>".__('Facebook', TEXT_DOMAIN)."</h3>";
             $facebook_access_token = get_option('facebook_access_token');
             $facebook_page_id = get_option('facebook_page_id');
             require_once PLUGIN_DIR."api/facebook/Athena_Facebook_Api.php";
             $facebook = new Athena_Facebook_Api();
             $facebook->getResults($facebook_page_id, $facebook_access_token);
-        }*/
-        //check Youtube
-        /*if($this->checkYoutube()){
+        }
+        if($this->checkYoutube()){
             echo "<h3>".__('Youtube', TEXT_DOMAIN)."</h3>";
             $youtube_api_key = get_option('youtube_api_key');
             $youtube_listID = get_option('youtube_listID');
             require_once PLUGIN_DIR."api/youtube/Athena_Youtube_Api.php";
             $youtube = new Athena_Youtube_Api();
             $youtube->getResults($youtube_listID, $youtube_api_key);
-        }*/
+        }
         //check Twitter
         if($this->checkTwitter()){
             echo "<h3>".__('Twitter', TEXT_DOMAIN)."</h3>";
